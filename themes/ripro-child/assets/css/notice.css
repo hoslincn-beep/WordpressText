@@ -1,0 +1,380 @@
+.deanggwrap {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deangg {
+    width: 750px;
+    float: left;
+    /*height:30px;*/
+    line-height: 30px;
+    background: #1e1e1f;
+    padding: 10px 0;
+    border-radius: 30px;
+}
+
+.deanggspan {
+    float: left;
+    width: 105px;
+    margin: 0 auto;
+    color: #333;
+    font-size: 14px;
+}
+
+.deanggspan i {
+    display: block;
+    float: left;
+    font-size: 18px;
+    color: #f60;
+    margin-top: 7px;
+    margin-left: 15px;
+    margin-right: 6px;
+}
+
+.deanggspan span {
+    display: block;
+    float: left;
+    color: #eee;
+}
+
+.deangg b {
+    height: 12px;
+    margin-top: 9px;
+    width: 1px;
+    display: block;
+    float: left;
+    background: #a8a8a8;
+}
+
+.deanggc {
+    float: left;
+    width: 590px;
+    margin-left: 20px;
+}
+
+.announce-wrap {
+    height: 30px;
+    overflow: hidden;
+}
+
+.deanggc ul {}
+
+.deanggc ul li {
+    font-size: 14px;
+    width: 580px;
+    display: block;
+    clear: both;
+    height: 30px;
+    /* line-height:30px; */
+}
+
+.deanggc ul li a {
+    color: #f60;
+    font-weight: bold;
+    float: left;
+}
+
+.deanggc ul li a:hover {
+    color: #f60;
+    text-decoration: blink;
+}
+
+.deanggc ul li span {
+    float: right;
+    color: #999;
+    font-size: 12px;
+    width: 120px
+}
+
+.deanchart {
+    float: right;
+    height: 50px;
+    width: 330px;
+    color: #999;
+    margin-left: 20px;
+}
+
+.deanchart ul {
+    width: 460px;
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+}
+
+.deanchart ul li {
+    float: left;
+    height: 100%;
+    margin-right: 20px;
+    font-size: 14px;
+}
+
+.deanchart ul li i {
+    display: block;
+    float: left;
+    width: 35px;
+    height: 35px;
+    margin-top: 8px;
+    background: url(../images/today.png) 0 0 no-repeat;
+}
+
+.deanchart ul li.deanchart2 i {
+    background: url(../images/zuori.png) 0 0 no-repeat;
+}
+
+.deanchart ul li.deanchart3 i {
+    background: url(../images/zhuti.png) 0 0 no-repeat;
+}
+
+.deanchart ul li.deanchart4 i {
+    background: url(../images/zongshu.png) 0 0 no-repeat;
+}
+
+.deanchart ul li.deanchart5 i {
+    background: url(../images/member.png) 0 0 no-repeat;
+}
+
+.deanchartdiv {
+    float: left;
+    margin-left: 8px;
+    margin-top: 6px;
+    text-align: center;
+}
+
+.deanchartdiv em {
+    font-size: 12px;
+    color: #999;
+    font-style: inherit;
+}
+
+.deanchartdiv span {
+    font-size: 12px;
+    color: #999;
+}
+
+.deanchartdiv a {
+    font-size: 12px;
+    color: #999;
+}
+
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.aligncenter p.wp-caption-text {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.scroll {
+    background-color: rgba(2, 10, 18, .8);
+}
+
+.ripro-dark .navbar .user-pbtn {
+    background: none;
+    border: none;
+    color: #d4e2ff;
+    background-image: none;
+    -webkit-animation: none;
+}
+
+.ripro-dark .navbar .navbar-button {
+    background: none;
+    border: none;
+    color: #d4e2ff;
+    background-image: none;
+    -webkit-animation: none;
+}
+
+.navigation-down .nav-down-menu1 {
+    width: 100%;
+    margin: 0;
+    background: url(../images/tuyiyi_bg.png) center top;
+    position: absolute;
+    top: 0;
+    -webkit-box-shadow: 5px 0 11px rgba(0, 0, 0, .2);
+    -ms-box-shadow: 5px 0 11px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 5px 0 11px rgba(0, 0, 0, .2);
+    box-shadow: 5px 0 11px rgba(0, 0, 0, .2);
+    z-index: 3;
+}
+
+.navigation-down-inner {
+    margin: auto;
+    width: 1200px;
+    position: relative;
+}
+
+#tuyiyi_vip {
+    width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+#tuyiyi_vip .banner {
+    font-size: 22px;
+    color: #FFF;
+    padding-top: 40px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.tuyiyi_vip {
+    margin-top: 30px;
+    float: left;
+    margin-bottom: 30px;
+}
+
+.tuyiyi_vip li {
+    float: left;
+    width: 345px;
+    height: 205px;
+    margin-right: 18px;
+    border: 1px solid #e7e7e7;
+    background: #fff;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 20px rgba(235, 235, 235, .3);
+    -ms-box-shadow: 0 0 20px rgba(235, 235, 235, .3);
+    -moz-box-shadow: 0 0 20px rgba(235, 235, 235, .3);
+    box-shadow: 0 0 20px rgba(235, 235, 235, .3);
+    list-style: none;
+}
+
+.tuyiyi_vip li .img {
+    float: left;
+    width: 85px;
+    padding: 40px 0 0 30px;
+    text-align: center;
+}
+
+.tuyiyi_vip li .ico_svip {
+    height: 62px;
+    width: 68px;
+    background-position: 0 0;
+}
+
+.ico_svip,
+.ico_vip,
+.tuyiyi_vip li .ico_qvip {
+    background: url(../images/tuyiyi_vip3_1.png) no-repeat;
+}
+
+.vip_ico {
+    display: inline-block;
+    vertical-align: middle;
+    width: 68px;
+    height: 62px;
+    margin: 0 0 10px;
+}
+
+.tuyiyi_vip li .img p {
+    line-height: 26px;
+    font-size: 18px;
+    color: #666;
+}
+
+.tuyiyi_vip li .text {
+    float: none;
+    padding: 40px 0 40px 0;
+    margin-left: 140px;
+    line-height: 35px;
+}
+
+.tuyiyi_vip li .text strong {
+    font-size: 22px;
+    color: #ffa800;
+}
+
+.tuyiyi_vip li .text del {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #666;
+}
+
+.tuyiyi_vip2 a {
+    float: left;
+    display: block;
+    width: 156px;
+    line-height: 38px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #ffa800;
+    text-decoration: none;
+    margin-top: 8px;
+}
+
+.tuyiyi_vip2 .tuyiyi_vip3 {
+    display: none;
+    float: left;
+}
+
+.tuyiyi_vip2 a {
+    float: left;
+    display: block;
+    width: 156px;
+    line-height: 38px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #ffa800;
+    text-decoration: none;
+    margin-top: 8px;
+}
+
+.tuyiyi_vip li .ico_tj {
+    color: #fff;
+    height: 20px;
+    width: 40px;
+    position: absolute;
+    text-align: center;
+    margin: 2px 2px;
+    line-height: 20px;
+    background-color: #ff5d8f;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.tuyiyi_vip li .ico_qvip {
+    height: 62px;
+    width: 68px;
+    background-position: -68px 0;
+}
+
+.tuyiyi_vip li .ico_vip {
+    height: 62px;
+    width: 68px;
+    background-position: -136px 0;
+}
+
+.tuyiyi_vip4 p {
+    line-height: 22px;
+}
+
+.navigation-down {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+}
