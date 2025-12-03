@@ -146,22 +146,38 @@ function _get_post_cao_is_boosvip()
 {
     global $post;
     $post_ID = $post->ID;
-    if (get_post_meta($post_ID, 'cao_price', true) == 0) {
-        if (_cao('is_article_list_down')) {
-            return '免费';
-        } else {
-            return '';
-        }
+    
+    // 获取文章的价格和限制设置
+    $cao_price = get_post_meta($post_ID, 'cao_price', true);
+    $cao_close_novip_pay = get_post_meta($post_ID, 'cao_close_novip_pay', true);
+    $cao_is_boosvip = get_post_meta($post_ID, 'cao_is_boosvip', true);
+    
+    // 判断是否为免费但仅限VIP下载的资源
+    $is_free_vip_only = ($cao_price == 0 && ($cao_close_novip_pay || $cao_is_boosvip));
+    
+    if ($is_free_vip_only) {
+        // 价格=0且勾选了限制选项，显示"VIP免费"
+        return 'VIP免费';
+    } elseif ($cao_price == 0) {
+        // 价格=0但未勾选限制选项，显示"免费"
+        return '免费';
     }
-    /*if (get_post_meta($post_ID, 'cao_is_boosvip', true)) {
+    
+    // 以下是原有逻辑，用于价格大于0的情况
+    if (get_post_meta($post_ID, 'cao_is_boosvip', true)) {
         return 'VIP免费';
     }
     if (get_post_meta($post_ID, 'cao_vip_rate', true) == 0) {
         return 'VIP免费';
     }
     $cao_vip_rate = get_post_meta($post_ID, 'cao_vip_rate', true) * 10;
-    return 'VIP ' . $cao_vip_rate . '折';*/
+    return 'VIP ' . $cao_vip_rate . '折';
 }
+
+
+
+
+
 
 //每日更新的文章数量
 function get_today_post_count()
@@ -217,7 +233,7 @@ function get_week_post_count()
         $count = $query->post_count;
     }
     ///////////S CACHE ////////////////
-    echo $count;
+    echo $count +30;
 }
 
 //用户总数
