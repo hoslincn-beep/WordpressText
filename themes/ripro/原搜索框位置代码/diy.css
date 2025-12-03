@@ -1,0 +1,249 @@
+/* DIYCSS
+   ========================================================================== */
+/**
+ * 1. 如果要修改css ，建议在这个文件修改覆盖即可，更新的时候，注意备份此文件即可
+ * 2. 如果要修改css ，建议在这个文件修改覆盖即可，更新的时候，注意备份此文件即可
+ *    如果要修改css ，建议在这个文件修改覆盖即可，更新的时候，注意备份此文件即可
+ */
+/**logo扫光效果CSS 开始**/
+.logo-wrapper{   /**根据logo外div样式名称修改名称，如果是ripro  请修改成 .logo-wrapper**/
+  position: relative;
+  overflow: hidden;
+  max-height: 50px;
+}
+.logo-wrapper:before {   /**根据logo外div样式名称修改before前名称，如果是ripro  请修改成 .logo-wrapper**/
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 10px; /**光标的宽度，可根据实际调整**/
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-animation: blink 1s ease-in 1s infinite;
+    animation: blink 2s ease-in 1s infinite;  /**第一个数字参数控制扫光速度，数字越大越慢**/
+}
+
+@-webkit-keyframes blink {
+    from {left: 10px;top: 0;}
+    to {left: 320px;top: 0;}
+}
+@-o-keyframes blink {
+    from {left: 10px;top: 0;}
+    to {left: 320px;top: 0;}
+}
+@-moz-keyframes blink {
+    from {left: 10px;top: 0;}
+    to {left: 320px;top: 0;}
+}
+@keyframes blink {
+    from {left: -100px;top: 0;}
+    to {left: 320px;top: 0;}
+}
+
+/*RiPro主题底部波浪特效**/
+.waveHorizontals {
+    width: 100%;
+    height: 20px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  background-color:#fff !important
+}
+.ripro-dark .waveHorizontals {
+    width: 100%;
+    height: 20px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  background-color:#181616 !important
+}
+#waveHorizontal1 {
+    -webkit-mask: url(../images/bolang/001.svg);
+    mask: url(../images/bolang/001.svg);
+    animation-delay: -2s;
+    animation-duration: 12s;
+}
+#waveHorizontal1, #waveHorizontal2, #waveHorizontal3 {
+    background-image: linear-gradient(20deg,#18cef2 0,#448aff 100%)!important;
+}
+.ripro-dark #waveHorizontal1{
+    background-color: #6495ed!important;
+}
+.ripro-dark  #waveHorizontal2{
+    background-color: #6495ed!important;
+}
+.ripro-dark  #waveHorizontal3{
+    background-color: #6495ed!important;
+}
+.waveHorizontal {
+    width: 200%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-repeat: repeat-x;
+    background-position: left bottom;
+    background-size: 350px 100%;
+    transform-origin: 0 100% 0;
+    animation-name: move;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes move{0%{transform:translate(-175px,0px) scale(1,1)}50%{transform:translate(-87px,0px) scale(1,0.5)}100%{transform:translate(0px,0px) scale(1,1)}}
+ 
+#waveHorizontal2 {
+    -webkit-mask: url(../images/bolang/002.svg);
+    mask: url(../images/bolang/002.svg);
+    animation-delay: -2s;
+    animation-duration: 5s;
+}
+#waveHorizontal3 {
+    -webkit-mask: url(../images/bolang/003.svg);
+    mask: url(../images/bolang/003.svg);
+    animation-delay: -1s;
+    animation-duration: 3s;
+}
+
+/* 侧边客服跟随开始 */
+.showscaidan:before { 
+  content: "\eaf1"; 
+} 
+.shows {
+  font-family: "show" !important; 
+  font-size: 16px; 
+  font-style: normal; 
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale; 
+} 
+@font-face {font-family: "iconfont"; 
+  src: url('//at.alicdn.com/t/font_1380870_o08dhovorbr.eot?t=1567357317161'); /* IE9 */ 
+  src: url('//at.alicdn.com/t/font_1380870_o08dhovorbr.eot?t=1567357317161#iefix') format('embedded-opentype'), /* IE6-IE8 */ 
+  url('//at.alicdn.com/t/font_1380870_o08dhovorbr.woff2?t=1567357317161') format('woff2'), 
+  url('//at.alicdn.com/t/font_1380870_o08dhovorbr.woff?t=1567357317161') format('woff'), 
+  url('//at.alicdn.com/t/font_1380870_o08dhovorbr.ttf?t=1567357317161') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */ 
+  url('//at.alicdn.com/t/font_1380870_o08dhovorbr.svg?t=1567357317161#iconfont') format('svg'); /* iOS 4.1- */ 
+} 
+.iconfont { 
+  font-family: "iconfont" !important; 
+  font-size: 16px; 
+  font-style: normal; 
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale; 
+} 
+.icon-QQqun:before { 
+  content: "\e600"; 
+}  
+.icon-weixin:before { 
+  content: "\e7e5"; 
+} 
+.icon-qqq:before { 
+  content: "\e623"; 
+} 
+.icon-qqqun2:before { 
+  content: "\e721"; 
+}  
+.icon-qq:before { 
+  content: "\e607"; 
+}  
+.icon-qqq1:before { 
+  content: "\e601"; 
+} 
+.icon-QQmian:before { 
+  content: "\e630"; 
+} 
+.icon-fankui:before { 
+  content: "\e61e"; 
+} 
+.icon-rijianmoshi:before { 
+  content: "\e626"; 
+} 
+.icon-qqqun1:before { 
+  content: "\e679"; 
+} 
+.icon-quanping2:before { 
+  content: "\e6e2"; 
+} 
+.icon-qqqun:before { 
+  content: "\e603"; 
+} 
+.icon-dingbu:before {
+  content: "\e643"; 
+} 
+.icon-gongzhonghao:before { 
+  content: "\e618"; 
+} 
+.icon-VIPx:before { 
+  content: "\e628"; 
+} 
+.icon-quanping:before { 
+  content: "\e682"; 
+} 
+.icon-VIP:before { 
+  content: "\e6b2"; 
+} 
+.icon-quanping1:before { 
+  content: "\e887"; 
+} 
+.icon-yewan:before { 
+  content: "\e669"; 
+} 
+.icon-huabanfuben-copy:before { 
+  content: "\e6b5"; 
+} 
+.icon-Fill:before { 
+  content: "\e6bd"; 
+} 
+.iconfont { 
+  font-family: "iconfont" !important; 
+  font-size: 16px; 
+  font-style: normal; 
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale; 
+} 
+.float-radius{-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;} 
+.float-text{color:#0000ff} /* 字体颜色 */ 
+.ripro-dark a.float-text{color:#0000ff} /* 夜晚模式字体颜色 */ 
+.float-icon{color:#0000ff} /* 图标颜色 */ 
+.float-hover{color:#0000ff} /* 鼠标掠过字体颜色 */ 
+.flost-hover-bg{background-color:#0000ff} /* 鼠标掠过背景颜色 */ 
+.float-border{border-color:#ececec !important} /* 边框颜色 */ 
+.float-box{ 
+        width:68px;        /* 宽度 修改之后要修改float-alert-box里的right值，right值计算方式：此数值减去（5*2+2） */ 
+        padding:5px;/* 按钮框边缘留出像素 */ 
+        font-size:14px;/* 按钮字体大小 */ 
+        position:fixed;right:0;top:75%;z-index:9997; 
+        margin-top:-303px;        /* 自身高度的一半 */ 
+        _position: absolute;_top:expression(eval(document.documentElement.scrollTop+100));        /* 兼容低版本IE */ 
+} 
+.float-ul,.float-ul li{margin:0;padding:0;}
+.float-ul{margin-top:5px;text-align:center;line-height:1.2;list-style:none;background-color:#FFF;box-shadow: 0 2px 5px #e6e6e6;} 
+.float-ul .iconfont{font-size:22px;line-height:22px;} 
+.float-ul li a{display:block;width:100%;padding:10px 0;line-height:18px;} 
+.float-ul li a:hover{background: linear-gradient(-125deg,#0000ff 0%, #f7b832 100%);box-shadow: 0 8px 10px rgba(32,160,255,.3);color:#FFF;} 
+.float-ul li a.qq{-moz-border-top-left-radius:4px;-moz-border-top-right-radius:4px;border-top-left-radius:4px;border-top-right-radius:4px;position: relative;} 
+.float-ul li a.weixin{position: relative;} 
+.float-ul li a.fankui{-moz-border-bottom-left-radius:4px;-moz-border-bottom-right-radius:4px;border-bottom-left-radius:4px;border-bottom-right-radius:4px;} 
+.float-ul li a.fankui .iconfont{font-size:22px;line-height:22px;} 
+.float-alert-box{width:180px;height:185px;background-color:#FFF;border:1px solid #ececec;position: absolute;right:56px;top:0;z-index:9998;display:none;} 
+.srcdict_qd_1:hover { 
+    background: #ffffff; 
+    box-shadow: 0 8px 10px rgba(32,160,255,.3); 
+    color: #0295f9; 
+} 
+.srcdict_qd_1{ 
+    background: linear-gradient(-125deg,#0000ff 0%, #f7b832 100%); 
+    box-shadow: 0 8px 10px rgba(32,160,255,.3); 
+    color: #FFF; 
+} 
+.float-qq-box{padding:20px 15px;} 
+.float-weixin-box{padding:15px;} 
+.float-weixin-box img{margin:0 auto;} 
+.float-weixin-box p{font-weight:600;color:#0000ff;margin-bottom:5px;} 
+.float-alert-box h6{font-size:20px;color:#0000ff;} 
+.float-alert-box p{line-height:24px;} 
+.float-ul li .float-qq-box{color:#666;} 
+.float-ul li .float-weixin-box{color:#666;top:-61px;} 
+.float-qq-btn{padding:10px;background-color:#0000ff;color:#FFF;} 
+@media screen and (max-width:639px){.float-box{display:none;}}
+/* 跟随结束 */

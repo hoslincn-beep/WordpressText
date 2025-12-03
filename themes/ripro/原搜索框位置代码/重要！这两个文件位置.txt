@@ -1,0 +1,9 @@
+search.php 的位置
+\wp-content\themes\ripro\parts\home-mode
+
+
+
+diy.css 的位置
+\wp-content\themes\ripro\assets\css
+
+如果想要原来的样子，把这两个文件替换掉就可以了
