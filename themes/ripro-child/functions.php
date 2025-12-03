@@ -304,3 +304,55 @@ function get_all_post_count()
     ///////////S CACHE ////////////////
     echo $count;
 }
+
+/* ----------  最小补丁：让“下载次数限制”同时对游客生效  ---------- */
+ 
+/**
+ * 24h 内不变的游客身份串（IP+UA 摘要）
+ */
+if (!function_exists('rc_guest_uid')) {
+    function rc_guest_uid() {
+        $ip  = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+        $ua  = $_SERVER['HTTP_USER_AGENT'] ?? '';
+        $key = 'rc_gid_' . substr(md5($ip . $ua), 0, 8);
+        if (!isset($_COOKIE[$key])) {
+            setcookie($key, '1', time() + DAY_IN_SECONDS, COOKIEPATH, COOKIE_DOMAIN);
+        }
+        return $key;
+    }
+}
+ 
+/**
+ * 覆盖父主题 is_download_count_limit()
+ * 登录用户 → user_id；游客 → rc_guest_uid()
+ */
+if (!function_exists('is_download_count_limit')) :
+function is_download_count_limit($post_id = 0) {
+    $max  = absint(_cao('download_count_limit_num', 3));
+    $max  = max(1, $max);
+    $day  = date('Ymd');
+    $key  = "download_count_{$day}";
+ 
+    $uid  = is_user_logged_in() ? get_current_user_id() : rc_guest_uid();
+    $used = (int) get_user_meta($uid, $key, true);
+ 
+    return $used >= $max;
+}
+endif;
+ 
+/**
+ * 覆盖父主题 set_download_count_limit()
+ */
+if (!function_exists('set_download_count_limit')) :
+function set_download_count_limit($post_id = 0) {
+    $day = date('Ymd');
+    $key = "download_count_{$day}";
+ 
+    $uid  = is_user_logged_in() ? get_current_user_id() : rc_guest_uid();
+    $used = (int) get_user_meta($uid, $key, true);
+ 
+    update_user_meta($uid, $key, $used + 1);
+}
+endif;
+/* ----------  补丁结束  ---------- */
+
