@@ -83,8 +83,6 @@ if (!_cao('close_site_shop','0')) {
                 'label' => '勾选后永久'._cao('site_vip_name').'会员免费，其他会员按折扣或者原价购买',
                 'default' => _cao('cao_is_boosvip',false),
             ),
-
-
             array(
                 'id'    => 'cao_status',
                 'type'  => 'switcher',
@@ -92,7 +90,13 @@ if (!_cao('close_site_shop','0')) {
                 'label' => '开启后可设置付费下载专有内容',
                 'default' => _cao('cao_status',true),
             ),
-
+            array(
+              'id'      => 'taobao_url',
+              'type'    => 'text',
+              'title'   => '淘宝购买',
+              'desc'    => '填写淘宝商品详情页地址，留空则不显示按钮',
+              'validate'=> 'url',
+            ),
             array(
                 'id'         => 'cao_downurl',
                 'type'       => 'upload',
