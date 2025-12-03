@@ -149,14 +149,16 @@
                         case 11: //免登陆  已经购买过 输出OK
                             echo cao_get_post_downBtn($post_id); // 输出下载按钮
                             echo $cao_pwd_html;
+                            // ---------- 重要修改：将阿里与夸克按钮指向 /go?type=...&post_id=ID ----------
                             if (!empty($cao_downurl_bak) && !empty($cao_downurl_quark)) {
-                                echo '<a href="'.esc_url($cao_downurl_bak).'" class="btn btn-buy down" target="_blank"><i class="fa fa-download"></i> 阿里云盘</a>';
-                                echo '<a href="'.esc_url($cao_downurl_quark).'" class="btn btn-buy down" target="_blank"><i class="fa fa-arrow-circle-down"></i> 夸克云盘</a>';
+                                // 阿里 type=1, 夸克 type=0
+                                echo '<a href="'.esc_url(home_url('/go?type=1&post_id='.$post_id)).'" class="btn btn-buy down" target="_blank"><i class="fa fa-download"></i> 阿里云盘</a>';
+                                echo '<a href="'.esc_url(home_url('/go?type=0&post_id='.$post_id)).'" class="btn btn-buy down" target="_blank"><i class="fa fa-arrow-circle-down"></i> 夸克云盘</a>';
                             } else {
                                 if (!empty($cao_downurl_bak)) {
-                                    echo '<a href="'.esc_url($cao_downurl_bak).'" class="btn btn-buy down" target="_blank"><i class="fa fa-download"></i> 阿里云盘</a>';
+                                    echo '<a href="'.esc_url(home_url('/go?type=1&post_id='.$post_id)).'" class="btn btn-buy down" target="_blank"><i class="fa fa-download"></i> 阿里云盘</a>';
                                 } elseif (!empty($cao_downurl_quark)) {
-                                    echo '<a href="'.esc_url($cao_downurl_quark).'" class="btn btn-buy down" target="_blank"><i class="fa fa-arrow-circle-down"></i> 夸克云盘</a>';
+                                    echo '<a href="'.esc_url(home_url('/go?type=0&post_id='.$post_id)).'" class="btn btn-buy down" target="_blank"><i class="fa fa-arrow-circle-down"></i> 夸克云盘</a>';
                                 }
                             }
                             break;
@@ -166,16 +168,16 @@
                             } else {
                                 echo cao_get_post_downBtn($post_id); // 输出下载按钮
                                 echo $cao_pwd_html;
-                            if (!empty($cao_downurl_bak) && !empty($cao_downurl_quark)) {
-                                echo '<a href="'.esc_url($cao_downurl_bak).'" class="btn btn-buy down" target="_blank"><i class="fa fa-download"></i> 阿里云盘</a>';
-                                echo '<a href="'.esc_url($cao_downurl_quark).'" class="btn btn-buy down" target="_blank"><i class="fa fa-arrow-circle-down"></i> 夸克云盘</a>';
-                            } else {
-                                if (!empty($cao_downurl_bak)) {
-                                    echo '<a href="'.esc_url($cao_downurl_bak).'" class="btn btn-buy down" target="_blank"><i class="fa fa-download"></i> 阿里云盘</a>';
-                                } elseif (!empty($cao_downurl_quark)) {
-                                    echo '<a href="'.esc_url($cao_downurl_quark).'" class="btn btn-buy down" target="_blank"><i class="fa fa-arrow-circle-down"></i> 夸克云盘</a>';
+                                if (!empty($cao_downurl_bak) && !empty($cao_downurl_quark)) {
+                                    echo '<a href="'.esc_url(home_url('/go?type=1&post_id='.$post_id)).'" class="btn btn-buy down" target="_blank"><i class="fa fa-download"></i> 阿里云盘</a>';
+                                    echo '<a href="'.esc_url(home_url('/go?type=0&post_id='.$post_id)).'" class="btn btn-buy down" target="_blank"><i class="fa fa-arrow-circle-down"></i> 夸克云盘</a>';
+                                } else {
+                                    if (!empty($cao_downurl_bak)) {
+                                        echo '<a href="'.esc_url(home_url('/go?type=1&post_id='.$post_id)).'" class="btn btn-buy down" target="_blank"><i class="fa fa-download"></i> 阿里云盘</a>';
+                                    } elseif (!empty($cao_downurl_quark)) {
+                                        echo '<a href="'.esc_url(home_url('/go?type=0&post_id='.$post_id)).'" class="btn btn-buy down" target="_blank"><i class="fa fa-arrow-circle-down"></i> 夸克云盘</a>';
+                                    }
                                 }
-                            }
                             break;
                             }
                         case 13: //免登陆 输出购买按钮信息
@@ -191,13 +193,13 @@
                                 echo '<span class="pwd"><span title="点击一键复制密码" id="refurl" class="copypaw copypaw btn btn-demo" data-clipboard-text="' . $cao_pwd . '">' . $cao_pwd . '</span></span>';
                             }
                             if (!empty($cao_downurl_bak) && !empty($cao_downurl_quark)) {
-                                echo '<a href="'.esc_url($cao_downurl_bak).'" class="btn btn-buy down" target="_blank"><i class="fa fa-download"></i> 阿里云盘</a>';
-                                echo '<a href="'.esc_url($cao_downurl_quark).'" class="btn btn-buy down" target="_blank"><i class="fa fa-arrow-circle-down"></i> 夸克云盘</a>';
+                                echo '<a href="'.esc_url(home_url('/go?type=1&post_id='.$post_id)).'" class="btn btn-buy down" target="_blank"><i class="fa fa-download"></i> 阿里云盘</a>';
+                                echo '<a href="'.esc_url(home_url('/go?type=0&post_id='.$post_id)).'" class="btn btn-buy down" target="_blank"><i class="fa fa-arrow-circle-down"></i> 夸克云盘</a>';
                             } else {
                                 if (!empty($cao_downurl_bak)) {
-                                    echo '<a href="'.esc_url($cao_downurl_bak).'" class="btn btn-buy down" target="_blank"><i class="fa fa-download"></i> 阿里云盘</a>';
+                                    echo '<a href="'.esc_url(home_url('/go?type=1&post_id='.$post_id)).'" class="btn btn-buy down" target="_blank"><i class="fa fa-download"></i> 阿里云盘</a>';
                                 } elseif (!empty($cao_downurl_quark)) {
-                                    echo '<a href="'.esc_url($cao_downurl_quark).'" class="btn btn-buy down" target="_blank"><i class="fa fa-arrow-circle-down"></i> 夸克云盘</a>';
+                                    echo '<a href="'.esc_url(home_url('/go?type=0&post_id='.$post_id)).'" class="btn btn-buy down" target="_blank"><i class="fa fa-arrow-circle-down"></i> 夸克云盘</a>';
                                 }
                             }
                             break;
