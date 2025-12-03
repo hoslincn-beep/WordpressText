@@ -34,6 +34,7 @@
     $cao_close_novip_pay = get_post_meta($post_id, 'cao_close_novip_pay', true);
     $site_vip_name = _cao('site_vip_name');
     $site_money_ua = _cao('site_money_ua');
+    
     //演示模块
     $cao_is_demo_img = get_post_meta($post_id, 'cao_is_demo_img', true);
     // 优惠信息
@@ -134,12 +135,47 @@
                    } else {
                        echo '<span class="boosvip-abs"><i class="fa fa-info-circle"></i> 该资源 <font style="font-size: 20px;color: #f92410;">终身' . $site_vip_name . '免费</font> <a href="' . esc_url(home_url('/user?action=vip')) . '" ><i class="fa fa-hand-o-right"></i> 去升级</a></span>';
                    }
-               }; ?>
+               }; 
+               ?>
            <?php } else {
                ; ?>
                <u>优惠信息:</u><span><span class="Tips" id="momk">一口价</span></span>
-           <?php }; ?>
+           <?php 
+           }; 
+           ?>
                </span>
+               
+<?php 
+$tb = get_post_meta(get_the_ID(), 'taobao_url', true);
+if ( ! empty($tb) ) :
+?>
+  <!-- 淘宝购买按钮 + 内嵌样式 -->
+  <style>
+    .taobao-buy-inline{
+
+        align-items:center;
+        margin-left:26px;
+        padding:8px 18px;
+        background:#ff6a00;
+        color:#fff;
+        border-radius:26px;
+        font-size:16px;
+        line-height:1;
+        text-decoration:none;
+    }
+    .taobao-buy-inline:hover{
+        background:#e76100;
+        color:#fff;
+    }
+    .taobao-buy-inline i{
+        margin-right:4px;
+    }
+  </style>
+ 
+  <a class="taobao-buy-inline" href="<?php echo esc_url($tb); ?>" target="_blank" rel="noopener">
+      <i class="ri-shopping-cart-line"></i>淘宝购买 
+  </a>
+<?php endif; ?>
                     </div>
                     <?php $create_nonce = wp_create_nonce('caopay-' . $post_id);
                     echo '<div class="downinfo pay-box">';
